@@ -1,0 +1,289 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="docs-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar">
+            <div class="sidebar-section">
+                <h3>Getting Started</h3>
+                <ul>
+                    <li><a href="{{ '/docs/getting-started/' | relative_url }}" class="sidebar-link">Quick Start</a></li>
+                    <li><a href="{{ '/docs/installation/' | relative_url }}" class="sidebar-link">Installation</a></li>
+                    <li><a href="{{ '/docs/first-document/' | relative_url }}" class="sidebar-link">Your First Document</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Core Concepts</h3>
+                <ul>
+                    <li><a href="{{ '/docs/executable-markdown/' | relative_url }}" class="sidebar-link">Executable Markdown</a></li>
+                    <li><a href="{{ '/docs/lua-blocks/' | relative_url }}" class="sidebar-link">Lua Code Blocks</a></li>
+                    <li><a href="{{ '/docs/document-context/' | relative_url }}" class="sidebar-link">Document Context</a></li>
+                    <li><a href="{{ '/docs/request-inspection/' | relative_url }}" class="sidebar-link">Request Inspection</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>HTTP Client</h3>
+                <ul>
+                    <li><a href="{{ '/docs/http-requests/' | relative_url }}" class="sidebar-link">Making Requests</a></li>
+                    <li><a href="{{ '/docs/authentication/' | relative_url }}" class="sidebar-link">Authentication</a></li>
+                    <li><a href="{{ '/docs/headers-cookies/' | relative_url }}" class="sidebar-link">Headers & Cookies</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>HTTP Server</h3>
+                <ul>
+                    <li><a href="{{ '/docs/creating-servers/' | relative_url }}" class="sidebar-link">Creating Servers</a></li>
+                    <li><a href="{{ '/docs/routing/' | relative_url }}" class="sidebar-link">Routing</a></li>
+                    <li><a href="{{ '/docs/middleware/' | relative_url }}" class="sidebar-link">Middleware</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>API Reference</h3>
+                <ul>
+                    <li><a href="{{ '/docs/api/' | relative_url }}" class="sidebar-link">Lua API Reference</a></li>
+                    <li><a href="{{ '/docs/examples/' | relative_url }}" class="sidebar-link">Code Examples</a></li>
+                </ul>
+            </div>
+
+            <!-- API Quick Navigation -->
+            {% if page.url contains '/docs/api/' %}
+                <div class="sidebar-section">
+                    <h3>Quick Reference</h3>
+                    <ul>
+                        <li><a href="#print" class="sidebar-link">print()</a></li>
+                        <li><a href="#sandman-http" class="sidebar-link">sandman.http</a></li>
+                        <li><a href="#sandman-server" class="sidebar-link">sandman.server</a></li>
+                        <li><a href="#sandman-document" class="sidebar-link">sandman.document</a></li>
+                        <li><a href="#sandman-json" class="sidebar-link">sandman.json</a></li>
+                        <li><a href="#sandman-base64" class="sidebar-link">sandman.base64</a></li>
+                        <li><a href="#sandman-jwt" class="sidebar-link">sandman.jwt</a></li>
+                        <li><a href="#sandman-uri" class="sidebar-link">sandman.uri</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if page.url contains '/docs/examples/' %}
+                <div class="sidebar-section">
+                    <h3>Examples</h3>
+                    <ul>
+                        <li><a href="#basic-server" class="sidebar-link">Basic Server</a></li>
+                        <li><a href="#api-client" class="sidebar-link">API Client</a></li>
+                        <li><a href="#jwt-auth" class="sidebar-link">JWT Authentication</a></li>
+                        <li><a href="#crud-api" class="sidebar-link">CRUD API</a></li>
+                        <li><a href="#proxy-server" class="sidebar-link">Proxy Server</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+        </nav>
+
+        <!-- Main Content -->
+        <div class="docs-content">
+            <article class="docs-article">
+                {% if page.title %}
+                    <h1>{{ page.title }}</h1>
+                {% endif %}
+
+                {% if page.description %}
+                    <p class="lead">{{ page.description }}</p>
+                {% endif %}
+
+                {{ content }}
+            </article>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Documentation specific styles */
+    .docs-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: var(--spacing-3xl);
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .docs-sidebar {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-xl);
+        height: fit-content;
+        position: sticky;
+        top: calc(var(--spacing-3xl) + 80px);
+    }
+
+    .sidebar-section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .sidebar-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .sidebar-section h3 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-md);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .sidebar-section ul {
+        list-style: none;
+    }
+
+    .sidebar-section li {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .sidebar-link {
+        display: block;
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius);
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link.active {
+        color: var(--text-primary);
+        background-color: var(--background);
+    }
+
+    .docs-content {
+        max-width: none;
+    }
+
+    .docs-article {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-3xl);
+    }
+
+    .docs-article h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-xl);
+        color: var(--text-primary);
+    }
+
+    .docs-article h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: var(--spacing-2xl) 0 var(--spacing-lg);
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--border);
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .docs-article h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: var(--spacing-xl) 0 var(--spacing-md);
+        color: var(--text-primary);
+    }
+
+    .lead {
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-xl);
+        line-height: 1.7;
+    }
+
+    .docs-article pre {
+        background-color: var(--background);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+        margin: var(--spacing-lg) 0;
+        overflow-x: auto;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--text-primary);
+    }
+
+    .docs-article code {
+        background-color: var(--background);
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        color: var(--primary-color);
+    }
+
+    .docs-article pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-primary);
+    }
+
+    .docs-article p {
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    .docs-article ul, .docs-article ol {
+        margin-bottom: var(--spacing-lg);
+        padding-left: var(--spacing-xl);
+    }
+
+    .docs-article li {
+        margin-bottom: var(--spacing-sm);
+        color: var(--text-secondary);
+    }
+
+    .docs-article a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .docs-article a:hover {
+        text-decoration: underline;
+    }
+
+    /* Scroll to section smooth behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Highlight target sections */
+    .docs-article *:target {
+        background-color: var(--surface-light);
+        margin-left: -var(--spacing-lg);
+        margin-right: -var(--spacing-lg);
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+        border-radius: var(--border-radius);
+    }
+
+    @media (max-width: 1024px) {
+        .docs-layout {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .docs-sidebar {
+            position: static;
+            order: 2;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .docs-article {
+            padding: var(--spacing-xl);
+        }
+    }
+</style>
+

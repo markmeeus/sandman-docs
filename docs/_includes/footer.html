@@ -1,0 +1,31 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Sandman" class="footer-logo-icon">
+                    <span class="footer-logo-text">Sandman</span>
+                </div>
+                <p class="footer-description">{{ site.description }}</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="{{ '/downloads/' | relative_url }}">Downloads</a>
+                    <a href="{{ '/docs/' | relative_url }}">Documentation</a>
+                    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="{{ '/docs/getting-started/' | relative_url }}">Getting Started</a>
+                    <a href="{{ '/docs/api/' | relative_url }}">API Reference</a>
+                    <a href="{{ '/docs/examples/' | relative_url }}">Examples</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: '%Y' }} Sandman. Built with ❤️ by an indie developer.</p>
+        </div>
+    </div>
+</footer>
+

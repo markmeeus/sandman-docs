@@ -1,0 +1,16 @@
+<header class="header">
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Sandman" class="logo-icon">
+                <span class="logo-text">Sandman</span>
+            </div>
+            <nav class="nav-links">
+                {% for nav_item in site.navigation %}
+                    <a href="{{ nav_item.url | relative_url }}" class="nav-link{% if page.url == nav_item.url or page.url contains nav_item.url and nav_item.url != '/' %} active{% endif %}">{{ nav_item.title }}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+</header>
+

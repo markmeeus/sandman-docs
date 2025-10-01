@@ -1,0 +1,216 @@
+---
+layout: default
+---
+
+<div class="container">
+    <article class="blog-post">
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                    <span class="post-author">by {{ page.author }}</span>
+                {% endif %}
+                {% if page.categories %}
+                    <span class="post-category">{{ page.categories | first | capitalize }}</span>
+                {% endif %}
+            </div>
+            {% if page.excerpt %}
+                <div class="post-excerpt">{{ page.excerpt }}</div>
+            {% endif %}
+        </header>
+
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        {% if page.tags %}
+            <footer class="post-footer">
+                <div class="post-tags">
+                    {% for tag in page.tags %}
+                        <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </footer>
+        {% endif %}
+    </article>
+
+    <nav class="post-navigation">
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url | relative_url }}" class="nav-previous">
+                ← {{ page.previous.title }}
+            </a>
+        {% endif %}
+        {% if page.next.url %}
+            <a href="{{ page.next.url | relative_url }}" class="nav-next">
+                {{ page.next.title }} →
+            </a>
+        {% endif %}
+    </nav>
+</div>
+
+<style>
+    .blog-post {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-3xl);
+        margin: var(--spacing-3xl) 0;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-header {
+        margin-bottom: var(--spacing-2xl);
+        padding-bottom: var(--spacing-xl);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-primary);
+    }
+
+    .post-meta {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        font-size: 0.875rem;
+        flex-wrap: wrap;
+    }
+
+    .post-date {
+        color: var(--text-muted);
+    }
+
+    .post-author {
+        color: var(--text-secondary);
+    }
+
+    .post-category {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .post-excerpt {
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    .post-content {
+        line-height: 1.7;
+    }
+
+    .post-content h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: var(--spacing-2xl) 0 var(--spacing-lg);
+        color: var(--text-primary);
+    }
+
+    .post-content h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: var(--spacing-xl) 0 var(--spacing-md);
+        color: var(--text-primary);
+    }
+
+    .post-content p {
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-secondary);
+    }
+
+    .post-content pre {
+        background-color: var(--background);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border);
+        overflow-x: auto;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--text-primary);
+    }
+
+    .post-content code {
+        background-color: var(--background);
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        color: var(--primary-color);
+    }
+
+    .post-content pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-primary);
+    }
+
+    .post-footer {
+        margin-top: var(--spacing-2xl);
+        padding-top: var(--spacing-xl);
+        border-top: 1px solid var(--border);
+    }
+
+    .post-tags {
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background-color: var(--background);
+        color: var(--text-muted);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin: var(--spacing-2xl) 0;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-previous, .nav-next {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--border-radius);
+        transition: all 0.2s ease;
+    }
+
+    .nav-previous:hover, .nav-next:hover {
+        background-color: var(--surface);
+    }
+
+    @media (max-width: 768px) {
+        .blog-post {
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-navigation {
+            flex-direction: column;
+            gap: var(--spacing-md);
+            text-align: center;
+        }
+    }
+</style>
+

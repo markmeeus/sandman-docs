@@ -1,0 +1,550 @@
+---
+layout: default
+title: "Download Sandman"
+description: "Download Sandman for your platform. Native applications for macOS, Windows, and Linux."
+custom_js:
+  - "{{ '/assets/js/downloads.js' | relative_url }}"
+---
+
+<!-- Downloads Hero -->
+<section class="downloads-hero">
+    <div class="container">
+        <div class="downloads-content">
+            <h1 class="downloads-title">Download Sandman</h1>
+            <p class="downloads-subtitle">Get started with HTTP scripting in seconds. Choose your platform below.</p>
+            <div class="version-info">
+                <span class="current-version">Current Version: v{{ site.version }}</span>
+                <span class="release-date">Released: {{ site.release_date }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platform Downloads -->
+<section class="platforms">
+    <div class="container">
+        <div class="platforms-grid">
+            <!-- macOS -->
+            <div class="platform-card">
+                <div class="platform-icon">🍎</div>
+                <h3>macOS</h3>
+                <p>Native macOS application with full system integration</p>
+                <div class="platform-requirements">
+                    <strong>Requirements:</strong> macOS 12.0 or later
+                </div>
+                <div class="platform-downloads">
+                    <a href="#" class="btn btn-primary download-btn" data-platform="macos-intel">
+                        <span class="download-icon">⬇️</span>
+                        Download for Intel Macs
+                        <span class="download-size">~50 MB</span>
+                    </a>
+                    <a href="#" class="btn btn-primary download-btn" data-platform="macos-apple">
+                        <span class="download-icon">⬇️</span>
+                        Download for Apple Silicon
+                        <span class="download-size">~45 MB</span>
+                    </a>
+                </div>
+                <div class="platform-notes">
+                    <p><strong>Installation:</strong> Double-click the .dmg file and drag Sandman to Applications</p>
+                </div>
+            </div>
+
+            <!-- Windows -->
+            <div class="platform-card">
+                <div class="platform-icon">🪟</div>
+                <h3>Windows</h3>
+                <p>Standalone Windows executable with no dependencies</p>
+                <div class="platform-requirements">
+                    <strong>Requirements:</strong> Windows 10 or later
+                </div>
+                <div class="platform-downloads">
+                    <a href="#" class="btn btn-primary download-btn" data-platform="windows">
+                        <span class="download-icon">⬇️</span>
+                        Download for Windows
+                        <span class="download-size">~55 MB</span>
+                    </a>
+                </div>
+                <div class="platform-notes">
+                    <p><strong>Installation:</strong> Run the installer and follow the setup wizard</p>
+                    <p><strong>Note:</strong> Windows may show a security warning for unsigned applications</p>
+                </div>
+            </div>
+
+            <!-- Linux -->
+            <div class="platform-card">
+                <div class="platform-icon">🐧</div>
+                <h3>Linux</h3>
+                <p>AppImage for maximum compatibility across distributions</p>
+                <div class="platform-requirements">
+                    <strong>Requirements:</strong> Most modern Linux distributions
+                </div>
+                <div class="platform-downloads">
+                    <a href="#" class="btn btn-primary download-btn" data-platform="linux">
+                        <span class="download-icon">⬇️</span>
+                        Download AppImage
+                        <span class="download-size">~60 MB</span>
+                    </a>
+                </div>
+                <div class="platform-notes">
+                    <p><strong>Installation:</strong> Make executable with <code>chmod +x</code> and run</p>
+                    <p><strong>Tested on:</strong> Ubuntu 20.04+, Fedora 35+, Arch Linux</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Installation Guide -->
+<section class="installation-guide">
+    <div class="container">
+        <h2 class="section-title">Quick Start</h2>
+        <div class="guide-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download & Install</h3>
+                    <p>Choose your platform above and download the appropriate version. Follow the installation instructions for your operating system.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Create Your First Document</h3>
+                    <p>Launch Sandman and create a new .md file. Start writing your HTTP scripts using markdown and Lua code blocks.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Run and Test</h3>
+                    <p>Execute your code blocks to start servers, make HTTP requests, and see results in real-time with built-in inspection tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Alternative Installation -->
+<section class="alternative-install">
+    <div class="container">
+        <h2 class="section-title">Alternative Installation Methods</h2>
+        <div class="alt-methods">
+            <div class="alt-method">
+                <h3>🐳 Docker</h3>
+                <p>Run Sandman in a containerized environment</p>
+                <div class="code-block">
+                    <pre><code>docker run -p 4000:4000 -v $(pwd):/workspace sandman/sandman</code></pre>
+                </div>
+                <p class="method-note">Perfect for CI/CD pipelines and server deployments</p>
+            </div>
+
+            <div class="alt-method">
+                <h3>📦 Package Managers</h3>
+                <p>Install via your favorite package manager (coming soon)</p>
+                <div class="code-block">
+                    <pre><code># Homebrew (macOS)
+brew install sandman
+
+# Chocolatey (Windows)
+choco install sandman
+
+# Snap (Linux)
+snap install sandman</code></pre>
+                </div>
+                <p class="method-note">Package manager support is planned for future releases</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- System Requirements -->
+<section class="system-requirements">
+    <div class="container">
+        <h2 class="section-title">System Requirements</h2>
+        <div class="requirements-grid">
+            <div class="requirement-card">
+                <h3>Minimum Requirements</h3>
+                <ul>
+                    <li><strong>RAM:</strong> 512 MB available memory</li>
+                    <li><strong>Storage:</strong> 100 MB free disk space</li>
+                    <li><strong>Network:</strong> Internet connection for HTTP requests</li>
+                    <li><strong>Ports:</strong> Ability to bind to local ports (for servers)</li>
+                </ul>
+            </div>
+            <div class="requirement-card">
+                <h3>Recommended</h3>
+                <ul>
+                    <li><strong>RAM:</strong> 2 GB or more</li>
+                    <li><strong>Storage:</strong> 500 MB free disk space</li>
+                    <li><strong>Display:</strong> 1280x720 or higher resolution</li>
+                    <li><strong>Network:</strong> Broadband internet connection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Release Notes -->
+<section class="release-notes">
+    <div class="container">
+        <h2 class="section-title">What's New in v{{ site.version }}</h2>
+        <div class="release-content">
+            <div class="release-highlights">
+                <h3>🎉 New Features</h3>
+                <ul>
+                    <li>Enhanced HTTP client with better error handling</li>
+                    <li>Improved JWT token support with algorithm options</li>
+                    <li>Real-time request/response inspection</li>
+                    <li>Better Lua error reporting and debugging</li>
+                </ul>
+            </div>
+            <div class="release-improvements">
+                <h3>🚀 Improvements</h3>
+                <ul>
+                    <li>Faster document loading and parsing</li>
+                    <li>Better memory management for long-running servers</li>
+                    <li>Enhanced UI responsiveness</li>
+                    <li>Improved cross-platform compatibility</li>
+                </ul>
+            </div>
+            <div class="release-fixes">
+                <h3>🐛 Bug Fixes</h3>
+                <ul>
+                    <li>Fixed server shutdown issues on Windows</li>
+                    <li>Resolved JSON encoding edge cases</li>
+                    <li>Better handling of malformed HTTP responses</li>
+                    <li>Fixed document state synchronization issues</li>
+                </ul>
+            </div>
+        </div>
+        <div class="release-footer">
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">View Full Release Notes</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Downloads page specific styles */
+    .downloads-hero {
+        padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+        background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+        text-align: center;
+    }
+
+    .downloads-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-primary);
+    }
+
+    .downloads-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .version-info {
+        display: flex;
+        gap: var(--spacing-lg);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .current-version, .release-date {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background-color: var(--surface-light);
+        border-radius: var(--border-radius);
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+    }
+
+    .platforms {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .platforms-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-xl);
+    }
+
+    .platform-card {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-xl);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .platform-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-color);
+    }
+
+    .platform-icon {
+        font-size: 4rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .platform-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-md);
+        color: var(--text-primary);
+    }
+
+    .platform-card p {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .platform-requirements {
+        background-color: var(--background);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        margin-bottom: var(--spacing-lg);
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+    }
+
+    .platform-downloads {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .download-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
+        position: relative;
+    }
+
+    .download-icon {
+        font-size: 1.2em;
+    }
+
+    .download-size {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+
+    .recommended {
+        border: 2px solid var(--accent) !important;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    }
+
+    .recommended-badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: var(--accent);
+        color: white;
+        font-size: 0.625rem;
+        padding: 2px 6px;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+    }
+
+    .platform-notes {
+        text-align: left;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+    }
+
+    .platform-notes p {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .platform-notes code {
+        background-color: var(--background);
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: var(--font-mono);
+        font-size: 0.8em;
+    }
+
+    .installation-guide {
+        padding: var(--spacing-3xl) 0;
+        background-color: var(--surface);
+    }
+
+    .guide-steps {
+        display: flex;
+        gap: var(--spacing-xl);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-lg);
+        max-width: 350px;
+        text-align: left;
+    }
+
+    .step-number {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--background);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+
+    .step-content h3 {
+        margin-bottom: var(--spacing-sm);
+        color: var(--text-primary);
+    }
+
+    .alternative-install {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .alt-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: var(--spacing-xl);
+    }
+
+    .alt-method {
+        background-color: var(--surface);
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--border);
+    }
+
+    .alt-method h3 {
+        margin-bottom: var(--spacing-md);
+        color: var(--text-primary);
+    }
+
+    .code-block {
+        background-color: var(--background);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        margin: var(--spacing-md) 0;
+    }
+
+    .code-block pre {
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        color: var(--primary-color);
+        overflow-x: auto;
+    }
+
+    .method-note {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .system-requirements {
+        padding: var(--spacing-3xl) 0;
+        background-color: var(--surface);
+    }
+
+    .requirements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-xl);
+    }
+
+    .requirement-card {
+        background-color: var(--background);
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--border);
+    }
+
+    .requirement-card h3 {
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-primary);
+    }
+
+    .requirement-card ul {
+        list-style: none;
+    }
+
+    .requirement-card li {
+        padding: var(--spacing-sm) 0;
+        color: var(--text-secondary);
+    }
+
+    .release-notes {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .release-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .release-highlights, .release-improvements, .release-fixes {
+        background-color: var(--surface);
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius-lg);
+        border: 1px solid var(--border);
+    }
+
+    .release-highlights h3, .release-improvements h3, .release-fixes h3 {
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-primary);
+    }
+
+    .release-content ul {
+        list-style: none;
+    }
+
+    .release-content li {
+        padding: var(--spacing-sm) 0;
+        color: var(--text-secondary);
+        position: relative;
+        padding-left: var(--spacing-lg);
+    }
+
+    .release-content li:before {
+        content: "•";
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+    }
+
+    .release-footer {
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .downloads-title {
+            font-size: 2.5rem;
+        }
+
+        .platforms-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .guide-steps {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .alt-methods {
+            grid-template-columns: 1fr;
+        }
+
+        .version-info {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>

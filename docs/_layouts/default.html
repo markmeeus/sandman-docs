@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
+    {% seo %}
+    {% feed_meta %}
+</head>
+<body>
+    {% include header.html %}
+
+    <main{% if page.layout == 'docs' %} class="docs-main"{% endif %}>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script src="{{ js_file | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
+
+    {% if page.inline_js %}
+        <script>{{ page.inline_js }}</script>
+    {% endif %}
+</body>
+</html>
+

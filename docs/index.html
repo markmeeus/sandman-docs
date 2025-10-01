@@ -1,0 +1,133 @@
+---
+layout: default
+title: "HTTP Scripting Made Simple"
+description: "Write executable markdown documents and prototype HTTP servers in seconds. Sandman combines the power of Lua scripting with the simplicity of markdown for rapid API development."
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">HTTP Scripting Made Simple</h1>
+            <p class="hero-subtitle">Write executable markdown documents and prototype HTTP servers in seconds. Sandman combines the power of Lua scripting with the simplicity of markdown for rapid API development.</p>
+            <div class="hero-buttons">
+                <a href="{{ '/downloads/' | relative_url }}" class="btn btn-primary">Download Now</a>
+                <a href="{{ '/docs/' | relative_url }}" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+        <div class="hero-demo">
+            <div class="demo-window">
+                <div class="demo-header">
+                    <div class="demo-controls">
+                        <span class="demo-control red"></span>
+                        <span class="demo-control yellow"></span>
+                        <span class="demo-control green"></span>
+                    </div>
+                    <span class="demo-title">api-server.md</span>
+                </div>
+                <div class="demo-content">
+                    <pre><code># Simple API Server
+
+Create a basic HTTP server:
+
+```lua
+server = sandman.server.start(8080)
+
+sandman.server.get(server, "/hello", function(req)
+    return {
+        status = 200,
+        body = "Hello, World!",
+        headers = { ["content-type"] = "application/json" }
+    }
+end)
+```
+
+Test the endpoint:
+
+```lua
+response = sandman.http.get("http://localhost:8080/hello")
+print(response.body)
+```</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Choose Sandman?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Executable Markdown</h3>
+                <p>Write documentation and code in the same file. Your markdown becomes your API specification and implementation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Rapid Prototyping</h3>
+                <p>Spin up HTTP servers in seconds. Perfect for API mocking, testing, and rapid development iterations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Built-in Inspection</h3>
+                <p>Visualize HTTP requests and responses in real-time. Debug your APIs with comprehensive logging and inspection tools.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
+                <h3>Rich Lua API</h3>
+                <p>Full-featured HTTP client and server capabilities, JSON handling, JWT support, and more built right in.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🖥️</div>
+                <h3>Cross-Platform</h3>
+                <p>Native desktop application for macOS, Windows, and Linux. No browser required, no server setup needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Indie Spirit</h3>
+                <p>Built by developers, for developers. Simple, focused, and designed to get out of your way.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="use-cases">
+    <div class="container">
+        <h2 class="section-title">Perfect For</h2>
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3>API Prototyping</h3>
+                <p>Quickly mock up REST APIs and test integrations before building the real thing.</p>
+            </div>
+            <div class="use-case">
+                <h3>Testing & QA</h3>
+                <p>Create test servers, simulate API responses, and validate your applications.</p>
+            </div>
+            <div class="use-case">
+                <h3>Documentation</h3>
+                <p>Write living documentation that includes working examples and test cases.</p>
+            </div>
+            <div class="use-case">
+                <h3>Learning</h3>
+                <p>Explore HTTP concepts, practice API design, and experiment with web technologies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Join developers who are already using Sandman to build better APIs faster.</p>
+            <div class="cta-buttons">
+                <a href="{{ '/downloads/' | relative_url }}" class="btn btn-primary">Download Sandman</a>
+                <a href="{{ '/docs/' | relative_url }}" class="btn btn-secondary">View Documentation</a>
+            </div>
+        </div>
+    </div>
+</section>

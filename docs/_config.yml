@@ -1,0 +1,90 @@
+# Site settings
+title: Sandman
+description: "HTTP scripting made simple. Write executable markdown documents and prototype servers in seconds."
+baseurl: "/sandman-docs" # the subpath of your site, e.g. /blog
+url: "https://markmeeus.github.io" # the base hostname & protocol for your site
+
+# GitHub Pages specific settings
+# If this is a project page (username.github.io/repository-name), set baseurl to "/repository-name"
+# If this is a user page (username.github.io), leave baseurl as ""
+# For custom domain, set url to your domain and baseurl to ""
+
+logo: "/assets/images/icon.png"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:name/
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Sandman Team"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "docs"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Downloads"
+    url: "/downloads/"
+  - title: "Documentation"
+    url: "/docs/"
+  - title: "Blog"
+    url: "/blog/"
+
+# Site data
+version: "0.1.1"
+release_date: "September 2025"
+
+# Social links (optional)
+github_username: your-username
+twitter_username: your-twitter
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - "*.gemspec"
+  - build_site.sh
+  - Makefile
+  - .tool-versions
+  - .github/
+  - "*.sh"
+

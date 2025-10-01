@@ -1,0 +1,35 @@
+# Jekyll build output
+*_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby dependencies
+vendor/
+.bundle/
+
+# Node.js dependencies (if any)
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Build scripts and temporary files
+# Note: build_api_docs.rb and build_site.sh are now in the main sandman repository
+# The build_site.sh here is just a wrapper that calls the main script
