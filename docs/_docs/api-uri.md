@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "URI Utilities"
-permalink: /docs/api/uri/
+permalink: /docs/api-uri/
 nav_order: 9
 parent: "Sandman Lua API"
 ---

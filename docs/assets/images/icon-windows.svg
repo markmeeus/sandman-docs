@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Windows logo (4 panes) -->
+
+  <!-- Top-left pane -->
+  <path d="M 12 12 L 30 10 L 30 30 L 12 30 Z" fill="#e8dcc0" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Top-right pane -->
+  <path d="M 34 10 L 52 8 L 52 30 L 34 30 Z" fill="#e8dcc0" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Bottom-left pane -->
+  <path d="M 12 34 L 30 34 L 30 54 L 12 56 Z" fill="#e8dcc0" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Bottom-right pane -->
+  <path d="M 34 34 L 52 34 L 52 56 L 34 54 Z" fill="#e8dcc0" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Separator lines for depth -->
+  <line x1="32" y1="10" x2="32" y2="54" stroke="#ffb71b" stroke-width="3"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#ffb71b" stroke-width="3"/>
+</svg>
+

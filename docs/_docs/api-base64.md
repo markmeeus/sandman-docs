@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Base64 Utilities"
-permalink: /docs/api/base64/
+permalink: /docs/api-base64/
 nav_order: 7
 parent: "Sandman Lua API"
 ---
@@ -22,6 +22,7 @@ Base64 encoding and decoding with URL-safe variants:
 
 **Type:** Function  
 **Description:** Decodes a base64 string
+
 **⚠️ Note:** This function can throw errors. A `sandman.base64.try_decode` alternative is available that returns `result_or_nil, error` instead of throwing.
 
 ### Usage
@@ -85,6 +86,7 @@ b64_string = sandman.base64.encode(data)
 
 **Type:** Function  
 **Description:** Decodes a URL-safe base64 string
+
 **⚠️ Note:** This function can throw errors. A `sandman.base64.try_decode_url` alternative is available that returns `result_or_nil, error` instead of throwing.
 
 ### Usage

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "JSON Utilities"
-permalink: /docs/api/json/
+permalink: /docs/api-json/
 nav_order: 6
 parent: "Sandman Lua API"
 ---
@@ -20,6 +20,7 @@ Encode and decode JSON data:
 
 **Type:** Function  
 **Description:** Decodes a JSON string into a Lua variable
+
 **⚠️ Note:** This function can throw errors. A `sandman.json.try_decode` alternative is available that returns `result_or_nil, error` instead of throwing.
 
 ### Usage
