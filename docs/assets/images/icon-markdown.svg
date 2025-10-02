@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document (background, narrower) -->
+  <path d="M 8 8 L 26 8 L 32 14 L 32 40 L 8 40 Z" fill="#2d2419" stroke="#ffb71b" stroke-width="2"/>
+  <path d="M 26 8 L 26 14 L 32 14" fill="#3a2f1e" stroke="#ffb71b" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Document lines -->
+  <line x1="12" y1="22" x2="24" y2="22" stroke="#e8dcc0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="26" x2="20" y2="26" stroke="#e8dcc0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="34" x2="24" y2="34" stroke="#e8dcc0" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Large Heart (overlaying document) -->
+  <path d="M 30 20 C 30 17 27 14 24 14 C 21 14 18 17 18 20 C 18 26 30 34 30 34 C 30 34 42 26 42 20 C 42 17 39 14 36 14 C 33 14 30 17 30 20 Z" fill="#ffb71b" stroke="#ffb71b" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Heart pulse line inside -->
+  <path d="M 24 20 L 26.5 20 L 28 17 L 32 25 L 33.5 20 L 36 20" stroke="#2d2419" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+

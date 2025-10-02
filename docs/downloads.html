@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Download Sandman"
-description: "Download Sandman for your platform. Native applications for macOS, Windows, and Linux."
+description: "Download Sandman for macOS (Apple Silicon). Native desktop application for HTTP API testing and documentation. Windows and Linux coming soon."
 custom_js:
   - "{{ '/assets/js/downloads.js' | relative_url }}"
 ---
@@ -11,7 +11,7 @@ custom_js:
     <div class="container">
         <div class="downloads-content">
             <h1 class="downloads-title">Download Sandman</h1>
-            <p class="downloads-subtitle">Get started with HTTP scripting in seconds. Choose your platform below.</p>
+            <p class="downloads-subtitle">Free beta for macOS (Apple Silicon). Windows, Linux, and CLI coming soon.</p>
             <div class="version-info">
                 <span class="current-version">Current Version: v{{ site.version }}</span>
                 <span class="release-date">Released: {{ site.release_date }}</span>
@@ -26,68 +26,68 @@ custom_js:
         <div class="platforms-grid">
             <!-- macOS -->
             <div class="platform-card">
-                <div class="platform-icon">🍎</div>
+                <div class="platform-icon">
+                    <img src="{{ '/assets/images/icon-macos.svg' | relative_url }}" alt="macOS" class="platform-icon-svg">
+                </div>
                 <h3>macOS</h3>
                 <p>Native macOS application with full system integration</p>
                 <div class="platform-requirements">
-                    <strong>Requirements:</strong> macOS 12.0 or later
+                    <strong>Requirements:</strong> macOS 12.0 or later (Apple Silicon only)
                 </div>
                 <div class="platform-downloads">
-                    <a href="#" class="btn btn-primary download-btn" data-platform="macos-intel">
-                        <span class="download-icon">⬇️</span>
-                        Download for Intel Macs
-                        <span class="download-size">~50 MB</span>
-                    </a>
                     <a href="#" class="btn btn-primary download-btn" data-platform="macos-apple">
-                        <span class="download-icon">⬇️</span>
+                        <img src="{{ '/assets/images/icon-download.svg' | relative_url }}" alt="Download" class="download-icon">
                         Download for Apple Silicon
                         <span class="download-size">~45 MB</span>
                     </a>
                 </div>
                 <div class="platform-notes">
                     <p><strong>Installation:</strong> Double-click the .dmg file and drag Sandman to Applications</p>
+                    <p><strong>Note:</strong> Intel Mac support coming soon</p>
                 </div>
             </div>
 
             <!-- Windows -->
-            <div class="platform-card">
-                <div class="platform-icon">🪟</div>
+            <div class="platform-card disabled">
+                <div class="platform-icon">
+                    <img src="{{ '/assets/images/icon-windows.svg' | relative_url }}" alt="Windows" class="platform-icon-svg">
+                </div>
                 <h3>Windows</h3>
                 <p>Standalone Windows executable with no dependencies</p>
+                <div class="coming-soon-badge">Coming Soon</div>
                 <div class="platform-requirements">
                     <strong>Requirements:</strong> Windows 10 or later
                 </div>
                 <div class="platform-downloads">
-                    <a href="#" class="btn btn-primary download-btn" data-platform="windows">
-                        <span class="download-icon">⬇️</span>
-                        Download for Windows
-                        <span class="download-size">~55 MB</span>
-                    </a>
+                    <button class="btn btn-disabled download-btn" disabled>
+                        <span class="download-icon">⏳</span>
+                        In Development
+                    </button>
                 </div>
                 <div class="platform-notes">
-                    <p><strong>Installation:</strong> Run the installer and follow the setup wizard</p>
-                    <p><strong>Note:</strong> Windows may show a security warning for unsigned applications</p>
+                    <p>Windows version is currently in development. Sign up for updates to be notified when it's ready.</p>
                 </div>
             </div>
 
             <!-- Linux -->
-            <div class="platform-card">
-                <div class="platform-icon">🐧</div>
+            <div class="platform-card disabled">
+                <div class="platform-icon">
+                    <img src="{{ '/assets/images/icon-linux.svg' | relative_url }}" alt="Linux" class="platform-icon-svg">
+                </div>
                 <h3>Linux</h3>
                 <p>AppImage for maximum compatibility across distributions</p>
+                <div class="coming-soon-badge">Coming Soon</div>
                 <div class="platform-requirements">
                     <strong>Requirements:</strong> Most modern Linux distributions
                 </div>
                 <div class="platform-downloads">
-                    <a href="#" class="btn btn-primary download-btn" data-platform="linux">
-                        <span class="download-icon">⬇️</span>
-                        Download AppImage
-                        <span class="download-size">~60 MB</span>
-                    </a>
+                    <button class="btn btn-disabled download-btn" disabled>
+                        <span class="download-icon">⏳</span>
+                        In Development
+                    </button>
                 </div>
                 <div class="platform-notes">
-                    <p><strong>Installation:</strong> Make executable with <code>chmod +x</code> and run</p>
-                    <p><strong>Tested on:</strong> Ubuntu 20.04+, Fedora 35+, Arch Linux</p>
+                    <p>Linux version is currently in development. Sign up for updates to be notified when it's ready.</p>
                 </div>
             </div>
         </div>
@@ -124,34 +124,28 @@ custom_js:
     </div>
 </section>
 
-<!-- Alternative Installation -->
-<section class="alternative-install">
+<!-- Coming Soon -->
+<section class="coming-soon-section">
     <div class="container">
-        <h2 class="section-title">Alternative Installation Methods</h2>
-        <div class="alt-methods">
-            <div class="alt-method">
-                <h3>🐳 Docker</h3>
-                <p>Run Sandman in a containerized environment</p>
+        <h2 class="section-title">Coming Soon</h2>
+        <div class="coming-soon-grid">
+            <div class="coming-soon-item">
+                <div class="coming-soon-icon">⌨️</div>
+                <h3>Command Line Interface</h3>
+                <p>Run Sandman notebooks from the terminal. Perfect for CI/CD pipelines and automated testing.</p>
                 <div class="code-block">
-                    <pre><code>docker run -p 4000:4000 -v $(pwd):/workspace sandman/sandman</code></pre>
+                    <pre><code>sandman run my-api-test.md
+sandman watch my-api-test.md</code></pre>
                 </div>
-                <p class="method-note">Perfect for CI/CD pipelines and server deployments</p>
             </div>
 
-            <div class="alt-method">
-                <h3>📦 Package Managers</h3>
-                <p>Install via your favorite package manager (coming soon)</p>
+            <div class="coming-soon-item">
+                <div class="coming-soon-icon">📦</div>
+                <h3>Package Managers</h3>
+                <p>Install via Homebrew, Chocolatey, and more</p>
                 <div class="code-block">
-                    <pre><code># Homebrew (macOS)
-brew install sandman
-
-# Chocolatey (Windows)
-choco install sandman
-
-# Snap (Linux)
-snap install sandman</code></pre>
+                    <pre><code>brew install sandman</code></pre>
                 </div>
-                <p class="method-note">Package manager support is planned for future releases</p>
             </div>
         </div>
     </div>
@@ -284,9 +278,66 @@ snap install sandman</code></pre>
         border-color: var(--primary-color);
     }
 
+    .platform-card.disabled {
+        opacity: 0.5;
+        position: relative;
+    }
+
+    .platform-card.disabled:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--border);
+    }
+
+    .coming-soon-badge {
+        position: absolute;
+        top: var(--spacing-lg);
+        right: var(--spacing-lg);
+        background-color: var(--primary-color);
+        color: var(--background);
+        padding: var(--spacing-xs) var(--spacing-md);
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-disabled {
+        background-color: var(--surface-light);
+        color: var(--text-muted);
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .btn-disabled:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: var(--surface-light);
+    }
+
     .platform-icon {
-        font-size: 4rem;
         margin-bottom: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+
+    .platform-icon-svg {
+        width: 80px;
+        height: 80px;
+        filter: drop-shadow(0 2px 8px rgba(255, 183, 27, 0.2));
+        transition: transform 0.3s ease;
+    }
+
+    .platform-card:hover .platform-icon-svg {
+        transform: scale(1.05);
+    }
+
+    .platform-card.disabled .platform-icon-svg {
+        opacity: 0.4;
+        filter: grayscale(0.5) drop-shadow(0 2px 8px rgba(255, 183, 27, 0.1));
     }
 
     .platform-card h3 {
@@ -405,26 +456,40 @@ snap install sandman</code></pre>
         color: var(--text-primary);
     }
 
-    .alternative-install {
+    .coming-soon-section {
         padding: var(--spacing-3xl) 0;
+        background-color: var(--surface);
     }
 
-    .alt-methods {
+    .coming-soon-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: var(--spacing-xl);
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    .alt-method {
-        background-color: var(--surface);
+    .coming-soon-item {
+        background-color: var(--background);
         padding: var(--spacing-xl);
         border-radius: var(--border-radius-lg);
-        border: 1px solid var(--border);
+        border: 2px dashed var(--border);
+        text-align: center;
     }
 
-    .alt-method h3 {
+    .coming-soon-icon {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .coming-soon-item h3 {
         margin-bottom: var(--spacing-md);
         color: var(--text-primary);
+    }
+
+    .coming-soon-item p {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-lg);
     }
 
     .code-block {

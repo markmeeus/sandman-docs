@@ -7,79 +7,12 @@ layout: default
         <!-- Sidebar Navigation -->
         <nav class="docs-sidebar">
             <div class="sidebar-section">
-                <h3>Getting Started</h3>
+                <h3>Documentation</h3>
                 <ul>
-                    <li><a href="{{ '/docs/getting-started/' | relative_url }}" class="sidebar-link">Quick Start</a></li>
-                    <li><a href="{{ '/docs/installation/' | relative_url }}" class="sidebar-link">Installation</a></li>
-                    <li><a href="{{ '/docs/first-document/' | relative_url }}" class="sidebar-link">Your First Document</a></li>
+                    <li><a href="{{ '/docs/' | relative_url }}" class="sidebar-link{% if page.url == '/docs/' or page.url == '/docs/index/' %} active{% endif %}">Getting Started</a></li>
+                    <li><a href="{{ '/docs/api/' | relative_url }}" class="sidebar-link{% if page.url contains '/docs/api/' %} active{% endif %}">Lua API Reference</a></li>
                 </ul>
             </div>
-
-            <div class="sidebar-section">
-                <h3>Core Concepts</h3>
-                <ul>
-                    <li><a href="{{ '/docs/executable-markdown/' | relative_url }}" class="sidebar-link">Executable Markdown</a></li>
-                    <li><a href="{{ '/docs/lua-blocks/' | relative_url }}" class="sidebar-link">Lua Code Blocks</a></li>
-                    <li><a href="{{ '/docs/document-context/' | relative_url }}" class="sidebar-link">Document Context</a></li>
-                    <li><a href="{{ '/docs/request-inspection/' | relative_url }}" class="sidebar-link">Request Inspection</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>HTTP Client</h3>
-                <ul>
-                    <li><a href="{{ '/docs/http-requests/' | relative_url }}" class="sidebar-link">Making Requests</a></li>
-                    <li><a href="{{ '/docs/authentication/' | relative_url }}" class="sidebar-link">Authentication</a></li>
-                    <li><a href="{{ '/docs/headers-cookies/' | relative_url }}" class="sidebar-link">Headers & Cookies</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>HTTP Server</h3>
-                <ul>
-                    <li><a href="{{ '/docs/creating-servers/' | relative_url }}" class="sidebar-link">Creating Servers</a></li>
-                    <li><a href="{{ '/docs/routing/' | relative_url }}" class="sidebar-link">Routing</a></li>
-                    <li><a href="{{ '/docs/middleware/' | relative_url }}" class="sidebar-link">Middleware</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>API Reference</h3>
-                <ul>
-                    <li><a href="{{ '/docs/api/' | relative_url }}" class="sidebar-link">Lua API Reference</a></li>
-                    <li><a href="{{ '/docs/examples/' | relative_url }}" class="sidebar-link">Code Examples</a></li>
-                </ul>
-            </div>
-
-            <!-- API Quick Navigation -->
-            {% if page.url contains '/docs/api/' %}
-                <div class="sidebar-section">
-                    <h3>Quick Reference</h3>
-                    <ul>
-                        <li><a href="#print" class="sidebar-link">print()</a></li>
-                        <li><a href="#sandman-http" class="sidebar-link">sandman.http</a></li>
-                        <li><a href="#sandman-server" class="sidebar-link">sandman.server</a></li>
-                        <li><a href="#sandman-document" class="sidebar-link">sandman.document</a></li>
-                        <li><a href="#sandman-json" class="sidebar-link">sandman.json</a></li>
-                        <li><a href="#sandman-base64" class="sidebar-link">sandman.base64</a></li>
-                        <li><a href="#sandman-jwt" class="sidebar-link">sandman.jwt</a></li>
-                        <li><a href="#sandman-uri" class="sidebar-link">sandman.uri</a></li>
-                    </ul>
-                </div>
-            {% endif %}
-
-            {% if page.url contains '/docs/examples/' %}
-                <div class="sidebar-section">
-                    <h3>Examples</h3>
-                    <ul>
-                        <li><a href="#basic-server" class="sidebar-link">Basic Server</a></li>
-                        <li><a href="#api-client" class="sidebar-link">API Client</a></li>
-                        <li><a href="#jwt-auth" class="sidebar-link">JWT Authentication</a></li>
-                        <li><a href="#crud-api" class="sidebar-link">CRUD API</a></li>
-                        <li><a href="#proxy-server" class="sidebar-link">Proxy Server</a></li>
-                    </ul>
-                </div>
-            {% endif %}
         </nav>
 
         <!-- Main Content -->

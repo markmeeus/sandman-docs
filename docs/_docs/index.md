@@ -1,88 +1,103 @@
 ---
-title: "Welcome to Sandman"
-description: "Sandman is an HTTP scripting environment that lets you write executable markdown documents. Combine the power of Lua scripting with the simplicity of markdown to create APIs, test endpoints, and prototype quickly."
+title: "Getting Started"
+description: "Get started with Sandman - learn how to create executable notebooks for HTTP API testing and documentation in minutes."
 permalink: /docs/
+nav_order: 1
 ---
 
-## What is Sandman?
+# Getting Started with Sandman
 
-Sandman transforms markdown documents into interactive HTTP scripting environments. You can:
+Sandman is an executable notebook for HTTP APIs. Write API workflows as interactive blocks of Lua code mixed with Markdown documentation—all in git-friendly files.
 
-- **Write executable documentation** - Your API docs become working examples
-- **Prototype servers quickly** - Spin up HTTP servers in seconds
-- **Test APIs interactively** - Make requests and inspect responses in real-time
-- **Share reproducible scripts** - Everything is contained in markdown files
+## Your First Notebook in 5 Minutes
 
-## Core Features
+### Step 1: Install Sandman
 
-### 📝 Executable Markdown
-Write markdown with embedded Lua code blocks that execute when you run them. Perfect for living documentation.
+[Download Sandman for macOS]({{ '/downloads/' | relative_url }})
 
-### 🌐 HTTP Client & Server
-Built-in HTTP client for making requests and server capabilities for creating mock APIs and prototypes.
+*Windows, Linux, and CLI versions coming soon*
 
-### 🔍 Request Inspection
-Visualize HTTP requests and responses with detailed inspection tools and real-time logging.
+### Step 2: Open a Folder
 
-### 🛠️ Rich API
-Comprehensive Lua API with JSON handling, JWT support, Base64 encoding, and more utilities.
+Launch Sandman and select a folder to work in. This could be your project folder or any directory where you want to keep your notebooks.
 
-## Quick Example
+Sandman will display the folder tree on the right side, showing all your files.
 
-Here's a simple example of what a Sandman document looks like:
+### Step 3: Create a New File
+
+In the folder tree, create a new file (e.g., `my-first-test.md`).
+
+Click on the file to open it. You'll see an empty Sandman document.
+
+### Step 4: Add Your First Block
+
+You'll see two buttons:
+- **Add Code** - Creates a Lua code block
+- **Add Markdown** - Creates a markdown text block
+
+Click **"Add Code"** to create your first code block. A block editor will appear where you can write Lua code.
+
+Try this simple example:
+
+```lua
+response = sandman.http.get("https://api.github.com/users/octocat")
+print("Status:", response.status)
+print("Username:", sandman.json.decode(response.body).login)
+```
+
+### Step 5: Run It
+
+Click the **Run** button on the code block (or press `⌘+Enter`). Watch as your code executes and displays the results in the output area.
+
+### Step 6: Add Documentation
+
+Click **"Add Markdown"** to add a text block above or below your code. Document what your code does:
 
 ```markdown
-# My API Test
+## Testing the GitHub API
 
-Let's create a simple server:
+This example fetches user information from GitHub's public API.
+```
+
+### Step 7: Inspect Everything
+
+Click on the code block to see the captured HTTP request and response details—headers, body, status code, timing, everything.
+
+### Step 8: Build Workflows
+
+Add more code blocks. Each block can use variables and results from previous blocks—they execute sequentially with shared state.
 
 ```lua
--- Start a server on port 8080
-server = sandman.server.start(8080)
+-- Block 2 can use the response from Block 1
+user = sandman.json.decode(response.body)
+repos_url = user.repos_url
 
--- Add a route
-sandman.server.get(server, "/hello", function(req)
-    return {
-        status = 200,
-        body = sandman.json.encode({
-            message = "Hello, World!",
-            timestamp = os.time()
-        }),
-        headers = { ["content-type"] = "application/json" }
-    }
-end)
+-- Fetch the user's repositories
+repos_response = sandman.http.get(repos_url)
+repos = sandman.json.decode(repos_response.body)
+print("Repositories:", #repos)
 ```
 
-Now let's test our server:
+### Step 9: Save & Share
 
-```lua
--- Make a request to our server
-response = sandman.http.get("http://localhost:8080/hello")
-print("Status:", response.status)
-print("Body:", response.body)
-```
-```
+Your notebook is just a Markdown file. It's automatically saved. Commit it to git, share it with your team, review it like code—because it *is* code.
 
-## Getting Started
+## What Makes Sandman Different?
 
-Ready to start using Sandman? Here are your next steps:
+### Executable Documentation
+Your API documentation and tests are the same file. If the notebook runs, the docs are correct.
 
-1. **[Download Sandman]({{ '/downloads/' | relative_url }})** - Get the native app for your platform
-2. **[Quick Start Guide]({{ '/docs/getting-started/' | relative_url }})** - Learn the basics in 5 minutes
-3. **[View Examples]({{ '/docs/examples/' | relative_url }})** - See Sandman in action with real examples
+### Stateful Blocks
+Each code block builds on the previous one's state. No more copying variables between requests or managing global state manually.
 
-## Popular Topics
+### Client & Server
+Test webhooks by spinning up a local server. Mock external APIs. Test full request/response cycles—all in one notebook.
 
-- **[Making HTTP Requests]({{ '/docs/http-requests/' | relative_url }})** - Learn how to use the HTTP client
-- **[Creating HTTP Servers]({{ '/docs/creating-servers/' | relative_url }})** - Build mock servers and API prototypes
+### Git-Native
+Plain Markdown files with executable Lua blocks. Perfect for version control, code review, and team collaboration.
+
+## Next Steps
+
 - **[Lua API Reference]({{ '/docs/api/' | relative_url }})** - Complete reference for all available functions
-- **[Authentication]({{ '/docs/authentication/' | relative_url }})** - Handle various authentication methods
-
-## Need Help?
-
-If you can't find what you're looking for in the documentation:
-
-- Check out the [examples section]({{ '/docs/examples/' | relative_url }}) for practical use cases
-- Read the [blog]({{ '/blog/' | relative_url }}) for tutorials and tips
-- Review the [API reference]({{ '/docs/api/' | relative_url }}) for detailed function documentation
+- **[Download Sandman]({{ '/downloads/' | relative_url }})** - Get the macOS app
 

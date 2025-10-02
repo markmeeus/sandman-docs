@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Document Context"
-permalink: /docs/api/document/
+permalink: /docs/api-document/
 nav_order: 5
 parent: "Sandman Lua API"
 ---

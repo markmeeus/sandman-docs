@@ -1,0 +1,32 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Linux penguin (Tux inspired) -->
+
+  <!-- Body -->
+  <ellipse cx="32" cy="40" rx="16" ry="18" fill="#2d2419" stroke="#ffb71b" stroke-width="2.5"/>
+
+  <!-- Belly -->
+  <ellipse cx="32" cy="42" rx="10" ry="13" fill="#e8dcc0"/>
+
+  <!-- Head -->
+  <ellipse cx="32" cy="22" rx="13" ry="14" fill="#2d2419" stroke="#ffb71b" stroke-width="2.5"/>
+
+  <!-- Eyes -->
+  <ellipse cx="27" cy="22" rx="2.5" ry="3.5" fill="#e8dcc0"/>
+  <ellipse cx="37" cy="22" rx="2.5" ry="3.5" fill="#e8dcc0"/>
+  <circle cx="27" cy="23" r="1.2" fill="#2d2419"/>
+  <circle cx="37" cy="23" r="1.2" fill="#2d2419"/>
+
+  <!-- Beak -->
+  <ellipse cx="32" cy="27" rx="2" ry="2.5" fill="#ffb71b"/>
+
+  <!-- Left wing -->
+  <ellipse cx="18" cy="38" rx="4" ry="10" fill="#2d2419" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Right wing -->
+  <ellipse cx="46" cy="38" rx="4" ry="10" fill="#2d2419" stroke="#ffb71b" stroke-width="2"/>
+
+  <!-- Feet -->
+  <ellipse cx="26" cy="56" rx="5" ry="3" fill="#ffb71b"/>
+  <ellipse cx="38" cy="56" rx="5" ry="3" fill="#ffb71b"/>
+</svg>
+

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "HTTP Client"
-permalink: /docs/api/http/
+permalink: /docs/api-http/
 nav_order: 3
 parent: "Sandman Lua API"
 ---

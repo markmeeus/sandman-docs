@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Global Functions"
-permalink: /docs/api/global/
+permalink: /docs/api-global/
 nav_order: 2
 parent: "Sandman Lua API"
 ---
