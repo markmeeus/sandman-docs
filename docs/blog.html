@@ -10,7 +10,7 @@ permalink: /blog/
     <div class="container">
         <div class="blog-hero-content">
             <h1 class="blog-title">Sandman Blog</h1>
-            <p class="blog-subtitle">Updates, tutorials, and insights from the development of Sandman</p>
+            <p class="blog-subtitle">Updates, tutorials, insights, random thoughts, ...</p>
         </div>
     </div>
 </section>
@@ -114,38 +114,6 @@ permalink: /blog/
     </div>
 </section>
 
-<!-- Newsletter Signup -->
-<section class="newsletter">
-    <div class="container">
-        <div class="newsletter-content">
-            <h2>Stay Updated</h2>
-            <p>Get notified about new releases, tutorials, and development updates</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-            <p class="newsletter-note">No spam, unsubscribe anytime. Updates are sent monthly at most.</p>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Newsletter form handling
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('newsletter-form');
-        const input = form.querySelector('.newsletter-input');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = input.value;
-
-            // In a real implementation, you'd send this to your newsletter service
-            alert(`Thanks for subscribing with ${email}!\n\nThis is a demo - in a real implementation, this would be connected to your newsletter service.`);
-            input.value = '';
-        });
-    });
-</script>
-
 <style>
     /* Blog page specific styles */
     .blog-hero {
@@ -198,7 +166,7 @@ permalink: /blog/
 
     .post-image {
         position: relative;
-        height: 200px;
+        height: 60px;
         background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     }
 
@@ -317,64 +285,6 @@ permalink: /blog/
         border-color: var(--primary-color);
     }
 
-    .newsletter {
-        padding: var(--spacing-3xl) 0;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        text-align: center;
-    }
-
-    .newsletter-content h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: var(--spacing-md);
-        color: var(--background);
-    }
-
-    .newsletter-content p {
-        font-size: 1.125rem;
-        margin-bottom: var(--spacing-xl);
-        color: var(--background);
-        opacity: 0.9;
-    }
-
-    .newsletter-form {
-        display: flex;
-        gap: var(--spacing-md);
-        max-width: 500px;
-        margin: 0 auto var(--spacing-md);
-    }
-
-    .newsletter-input {
-        flex: 1;
-        padding: var(--spacing-sm) var(--spacing-md);
-        border: none;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        background-color: white;
-        color: var(--background);
-    }
-
-    .newsletter-input::placeholder {
-        color: var(--text-muted);
-    }
-
-    .newsletter-form .btn {
-        white-space: nowrap;
-        background-color: var(--background);
-        color: var(--primary-color);
-    }
-
-    .newsletter-form .btn:hover {
-        background-color: var(--surface);
-    }
-
-    .newsletter-note {
-        font-size: 0.875rem;
-        color: var(--background);
-        opacity: 0.7;
-        margin: 0;
-    }
-
     @media (max-width: 768px) {
         .blog-title {
             font-size: 2.5rem;
@@ -386,16 +296,8 @@ permalink: /blog/
             gap: var(--spacing-md);
         }
 
-        .newsletter-form {
-            flex-direction: column;
-        }
-
-        .newsletter-input {
-            margin-bottom: var(--spacing-md);
-        }
-
         .featured-post .post-image {
-            height: 150px;
+            height: 50px;
         }
 
         .post-content {

@@ -13,9 +13,9 @@ Sandman is an executable notebook for HTTP APIs. Write API workflows as interact
 
 ### Step 1: Install Sandman
 
-[Download Sandman for macOS]({{ '/downloads/' | relative_url }})
+[Download Sandman]({{ '/downloads/' | relative_url }})
 
-*Windows, Linux, and CLI versions coming soon*
+Currently only on macOS *Windows, Linux, and CLI versions coming soon*
 
 ### Step 2: Open a Folder
 
@@ -61,7 +61,7 @@ This example fetches user information from GitHub's public API.
 
 ### Step 7: Inspect Everything
 
-Click on the code block to see the captured HTTP request and response details—headers, body, status code, timing, everything.
+Click line below the code block to see the captured HTTP request and response details—headers, body, status code, timing, everything.
 
 ### Step 8: Build Workflows
 

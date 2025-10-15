@@ -1,17 +1,5 @@
 // Download tracking and platform detection
 document.addEventListener('DOMContentLoaded', function() {
-    const downloadBtns = document.querySelectorAll('.download-btn');
-
-    downloadBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const platform = this.getAttribute('data-platform');
-
-            // In a real implementation, you'd have actual download URLs
-            alert(`Download for ${platform} would start here.\n\nThis is a demo - actual download links would be configured based on your release process.`);
-        });
-    });
-
     // Auto-detect platform and highlight recommended download
     const userAgent = navigator.userAgent.toLowerCase();
     let detectedPlatform = '';
@@ -26,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (detectedPlatform) {
         const recommendedBtn = document.querySelector(`[data-platform="${detectedPlatform}"]`);
-        if (recommendedBtn) {
+        if (recommendedBtn && !recommendedBtn.disabled) {
             recommendedBtn.classList.add('recommended');
             const recommendedBadge = document.createElement('span');
             recommendedBadge.className = 'recommended-badge';
@@ -34,5 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
             recommendedBtn.appendChild(recommendedBadge);
         }
     }
+
+    // Optional: Track download clicks
+    const downloadBtns = document.querySelectorAll('.download-btn:not(.btn-disabled)');
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const platform = this.getAttribute('data-platform');
+            console.log(`Download started for platform: ${platform}`);
+            // You can add analytics tracking here if needed
+        });
+    });
 });
 

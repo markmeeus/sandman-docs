@@ -63,12 +63,13 @@ navigation:
     url: "/blog/"
 
 # Site data
-version: "0.1.1"
-release_date: "September 2025"
+version: "0.1"
+release_date: "October 2025"
 
 # Social links (optional)
-github_username: your-username
+github_username: markmeeus
 twitter_username: your-twitter
+github_repo: markmeeus/sandman
 
 # Exclude from processing
 exclude:
