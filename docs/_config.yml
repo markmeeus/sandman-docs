@@ -1,8 +1,8 @@
 # Site settings
 title: Sandman
 description: "HTTP scripting made simple. Write executable markdown documents and prototype servers in seconds."
-baseurl: "/sandman-docs" # the subpath of your site, e.g. /blog
-url: "https://markmeeus.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sandmanapp.com" # the base hostname & protocol for your site
 
 # GitHub Pages specific settings
 # If this is a project page (username.github.io/repository-name), set baseurl to "/repository-name"
