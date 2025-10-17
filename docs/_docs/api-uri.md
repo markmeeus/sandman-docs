@@ -14,10 +14,10 @@ Parse, construct, and manipulate URIs and URLs:
 
 - [`sandman.uri.parse()`](#sandmanuriparse) - Parses a URI string into components
 - [`sandman.uri.tostring()`](#sandmanuritostring) - Converts URI components to a string
-- [`sandman.uri.encode()`](#sandmanuriencode) - URL-encodes a string
-- [`sandman.uri.decode()`](#sandmanuridecode) - URL-decodes a string
-- [`sandman.uri.encodeComponent()`](#sandmanuriencodecomponent) - URL-encodes a string component
-- [`sandman.uri.decodeComponent()`](#sandmanuridecodecomponent) - URL-decodes a string component
+- [`sandman.uri.encode()`](#sandmanuriencode) - URI-encodes a url
+- [`sandman.uri.decode()`](#sandmanuridecode) - URI-decodes a URI
+- [`sandman.uri.encode_component()`](#sandmanuriencode_component) - URI-encodes a URI component
+- [`sandman.uri.decode_component()`](#sandmanuridecode_component) - URI-decodes a URI component
 
 
 ## sandman.uri.parse {#sandmanuriparse}
@@ -28,15 +28,22 @@ Parse, construct, and manipulate URIs and URLs:
 ### Usage
 
 ```lua
-result = sandman.uri.parse(...)
+components = sandman.uri.parse("https://user@server.com:1234/test/path?qry=1&param=2")
 ```
+
+### Parameters
+
+- **uri: string**
+
+### Returns
+
+- **components: table**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.parse
-result = sandman.uri.parse()
+components = sandman.uri.parse("https://user@server.com:1234/test/path?qry=1&param=2")
 ```
 
 
@@ -48,94 +55,129 @@ result = sandman.uri.parse()
 ### Usage
 
 ```lua
-result = sandman.uri.tostring(...)
+uri = sandman.uri.tostring({host = "server.com", path = "/test/path", port = 1234, query = {qry = 1, param = 2}, scheme = "https", userinfo = "user"})
 ```
+
+### Parameters
+
+- **components: table**
+
+### Returns
+
+- **uri: string**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.tostring
-result = sandman.uri.tostring()
+uri = sandman.uri.tostring({host = "server.com", path = "/test/path", port = 1234, query = {qry = 1, param = 2}, scheme = "https", userinfo = "user"})
 ```
 
 
 ## sandman.uri.encode {#sandmanuriencode}
 
 **Type:** Function  
-**Description:** URL-encodes a string
+**Description:** URI-encodes a url
 
 ### Usage
 
 ```lua
-result = sandman.uri.encode(...)
+encoded_uri = sandman.uri.encode("http://test.com/Hello Sandman")
 ```
+
+### Parameters
+
+- **uri: string**
+
+### Returns
+
+- **encoded_uri: string**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.encode
-result = sandman.uri.encode()
+encoded_uri = sandman.uri.encode("http://test.com/Hello Sandman")
 ```
 
 
 ## sandman.uri.decode {#sandmanuridecode}
 
 **Type:** Function  
-**Description:** URL-decodes a string
+**Description:** URI-decodes a URI
 
 ### Usage
 
 ```lua
-result = sandman.uri.decode(...)
+uri = sandman.uri.decode("http://test.com/Hello%20Sandman")
 ```
+
+### Parameters
+
+- **encoded_uri: string**
+
+### Returns
+
+- **uri: string**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.decode
-result = sandman.uri.decode()
+uri = sandman.uri.decode("http://test.com/Hello%20Sandman")
 ```
 
 
-## sandman.uri.encodeComponent {#sandmanuriencodecomponent}
+## sandman.uri.encode_component {#sandmanuriencode_component}
 
 **Type:** Function  
-**Description:** URL-encodes a string component
+**Description:** URI-encodes a URI component
 
 ### Usage
 
 ```lua
-result = sandman.uri.encodeComponent(...)
+encoded_uri = sandman.uri.encode_component("http://test.com/Hello Sandman")
 ```
+
+### Parameters
+
+- **uri: string**
+
+### Returns
+
+- **encoded_uri: string**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.encodeComponent
-result = sandman.uri.encodeComponent()
+encoded_uri = sandman.uri.encode_component("http://test.com/Hello Sandman")
 ```
 
 
-## sandman.uri.decodeComponent {#sandmanuridecodecomponent}
+## sandman.uri.decode_component {#sandmanuridecode_component}
 
 **Type:** Function  
-**Description:** URL-decodes a string component
+**Description:** URI-decodes a URI component
 
 ### Usage
 
 ```lua
-result = sandman.uri.decodeComponent(...)
+uri = sandman.uri.decode_component("http%3A%2F%2Ftest.com%2FHello%20Sandman")
 ```
+
+### Parameters
+
+- **encoded_uri: string**
+
+### Returns
+
+- **uri: string**
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.uri.decodeComponent
-result = sandman.uri.decodeComponent()
+uri = sandman.uri.decode_component("http%3A%2F%2Ftest.com%2FHello%20Sandman")
 ```
 

@@ -13,62 +13,62 @@ Sandman provides a comprehensive Lua API for HTTP scripting, data manipulation, 
 
 ## API Modules
 
-### [Global Functions](/sandman-docs/docs/api-global/)
+### [Global Functions](/docs/api-global/)
 Core functions available globally without any module prefix:
-- [`print()`](/sandman-docs/docs/api-global/#print) - Prints values to the console/logs
+- [`print()`](/docs/api-global/#print) - Prints values to the console/logs
 
-### [HTTP Client](/sandman-docs/docs/api-http/)
+### [HTTP Client](/docs/api-http/)
 Make HTTP requests to external services:
-- [`get()`](/sandman-docs/docs/api-http/#sandmanhttpget) - Makes an HTTP GET request
-- [`post()`](/sandman-docs/docs/api-http/#sandmanhttppost) - Makes an HTTP POST request
-- [`put()`](/sandman-docs/docs/api-http/#sandmanhttpput) - Makes an HTTP PUT request
-- [`delete()`](/sandman-docs/docs/api-http/#sandmanhttpdelete) - Makes an HTTP DELETE request
-- [`patch()`](/sandman-docs/docs/api-http/#sandmanhttppatch) - Makes an HTTP PATCH request
-- [`head()`](/sandman-docs/docs/api-http/#sandmanhttphead) - Makes an HTTP HEAD request
-- [`request()`](/sandman-docs/docs/api-http/#sandmanhttprequest) - Sends an HTTP request with custom configuration
+- [`get()`](/docs/api-http/#sandmanhttpget) - Makes an HTTP GET request
+- [`post()`](/docs/api-http/#sandmanhttppost) - Makes an HTTP POST request
+- [`put()`](/docs/api-http/#sandmanhttpput) - Makes an HTTP PUT request
+- [`delete()`](/docs/api-http/#sandmanhttpdelete) - Makes an HTTP DELETE request
+- [`patch()`](/docs/api-http/#sandmanhttppatch) - Makes an HTTP PATCH request
+- [`head()`](/docs/api-http/#sandmanhttphead) - Makes an HTTP HEAD request
+- [`request()`](/docs/api-http/#sandmanhttprequest) - Sends an HTTP request with custom configuration
 
-### [HTTP Server](/sandman-docs/docs/api-server/)
+### [HTTP Server](/docs/api-server/)
 Create HTTP server endpoints and handle requests:
-- [`start()`](/sandman-docs/docs/api-server/#sandmanserverstart) - Starts the HTTP server
-- [`get()`](/sandman-docs/docs/api-server/#sandmanserverget) - Handles HTTP GET requests on the server
-- [`post()`](/sandman-docs/docs/api-server/#sandmanserverpost) - Handles HTTP POST requests on the server
-- [`put()`](/sandman-docs/docs/api-server/#sandmanserverput) - Handles HTTP PUT requests on the server
-- [`delete()`](/sandman-docs/docs/api-server/#sandmanserverdelete) - Handles HTTP DELETE requests on the server
-- [`patch()`](/sandman-docs/docs/api-server/#sandmanserverpatch) - Handles HTTP PATCH requests on the server
-- [`head()`](/sandman-docs/docs/api-server/#sandmanserverhead) - Handles HTTP HEAD requests on the server
-- [`add_route()`](/sandman-docs/docs/api-server/#sandmanserveradd_route) - Adds a route to the HTTP server
+- [`start()`](/docs/api-server/#sandmanserverstart) - Starts the HTTP server
+- [`get()`](/docs/api-server/#sandmanserverget) - Handles HTTP GET requests on the server
+- [`post()`](/docs/api-server/#sandmanserverpost) - Handles HTTP POST requests on the server
+- [`put()`](/docs/api-server/#sandmanserverput) - Handles HTTP PUT requests on the server
+- [`delete()`](/docs/api-server/#sandmanserverdelete) - Handles HTTP DELETE requests on the server
+- [`patch()`](/docs/api-server/#sandmanserverpatch) - Handles HTTP PATCH requests on the server
+- [`head()`](/docs/api-server/#sandmanserverhead) - Handles HTTP HEAD requests on the server
+- [`add_route()`](/docs/api-server/#sandmanserveradd_route) - Adds a route to the HTTP server
 
-### [Document Context](/sandman-docs/docs/api-document/)
+### [Document Context](/docs/api-document/)
 Manage document-scoped persistent data:
-- [`set()`](/sandman-docs/docs/api-document/#sandmandocumentset) - Sets a value in the document context
-- [`get()`](/sandman-docs/docs/api-document/#sandmandocumentget) - Gets a value from the document context
+- [`set()`](/docs/api-document/#sandmandocumentset) - Sets a value in the document context
+- [`get()`](/docs/api-document/#sandmandocumentget) - Gets a value from the document context
 
-### [JSON Utilities](/sandman-docs/docs/api-json/)
+### [JSON Utilities](/docs/api-json/)
 Encode and decode JSON data:
-- [`sandman.json.try_decode()`](/sandman-docs/docs/api-json/#sandmanjsondecode) - Decodes a JSON string into a Lua variable
-- [`encode()`](/sandman-docs/docs/api-json/#sandmanjsonencode) - Encodes a Lua variable into a JSON string
+- [`sandman.json.try_decode()`](/docs/api-json/#sandmanjsondecode) - Decodes a JSON string into a Lua variable
+- [`encode()`](/docs/api-json/#sandmanjsonencode) - Encodes a Lua variable into a JSON string
 
-### [Base64 Utilities](/sandman-docs/docs/api-base64/)
+### [Base64 Utilities](/docs/api-base64/)
 Base64 encoding and decoding with URL-safe variants:
-- [`sandman.base64.try_decode()`](/sandman-docs/docs/api-base64/#sandmanbase64decode) - Decodes a base64 string
-- [`encode()`](/sandman-docs/docs/api-base64/#sandmanbase64encode) - Encodes a string to base64
-- [`sandman.base64.try_decode_url()`](/sandman-docs/docs/api-base64/#sandmanbase64decode_url) - Decodes a URL-safe base64 string
-- [`encode_url()`](/sandman-docs/docs/api-base64/#sandmanbase64encode_url) - Encodes a string to URL-safe base64
+- [`sandman.base64.try_decode()`](/docs/api-base64/#sandmanbase64decode) - Decodes a base64 string
+- [`encode()`](/docs/api-base64/#sandmanbase64encode) - Encodes a string to base64
+- [`sandman.base64.try_decode_url()`](/docs/api-base64/#sandmanbase64decode_url) - Decodes a URL-safe base64 string
+- [`encode_url()`](/docs/api-base64/#sandmanbase64encode_url) - Encodes a string to URL-safe base64
 
-### [JWT Utilities](/sandman-docs/docs/api-jwt/)
+### [JWT Utilities](/docs/api-jwt/)
 JSON Web Token creation and verification:
-- [`sign()`](/sandman-docs/docs/api-jwt/#sandmanjwtsign) - Signs a JWT token
-- [`sandman.jwt.try_decode()`](/sandman-docs/docs/api-jwt/#sandmanjwtdecode) - Decodes a JWT token
-- [`sandman.jwt.try_verify()`](/sandman-docs/docs/api-jwt/#sandmanjwtverify) - Verifies a JWT token
+- [`sign()`](/docs/api-jwt/#sandmanjwtsign) - Signs a JWT token
+- [`sandman.jwt.try_decode()`](/docs/api-jwt/#sandmanjwtdecode) - Decodes a JWT token
+- [`sandman.jwt.try_verify()`](/docs/api-jwt/#sandmanjwtverify) - Verifies a JWT token
 
-### [URI Utilities](/sandman-docs/docs/api-uri/)
+### [URI Utilities](/docs/api-uri/)
 Parse, construct, and manipulate URIs and URLs:
-- [`parse()`](/sandman-docs/docs/api-uri/#sandmanuriparse) - Parses a URI string into components
-- [`tostring()`](/sandman-docs/docs/api-uri/#sandmanuritostring) - Converts URI components to a string
-- [`encode()`](/sandman-docs/docs/api-uri/#sandmanuriencode) - URL-encodes a string
-- [`decode()`](/sandman-docs/docs/api-uri/#sandmanuridecode) - URL-decodes a string
-- [`encodeComponent()`](/sandman-docs/docs/api-uri/#sandmanuriencodecomponent) - URL-encodes a string component
-- [`decodeComponent()`](/sandman-docs/docs/api-uri/#sandmanuridecodecomponent) - URL-decodes a string component
+- [`parse()`](/docs/api-uri/#sandmanuriparse) - Parses a URI string into components
+- [`tostring()`](/docs/api-uri/#sandmanuritostring) - Converts URI components to a string
+- [`encode()`](/docs/api-uri/#sandmanuriencode) - URI-encodes a url
+- [`decode()`](/docs/api-uri/#sandmanuridecode) - URI-decodes a URI
+- [`encode_component()`](/docs/api-uri/#sandmanuriencode_component) - URI-encodes a URI component
+- [`decode_component()`](/docs/api-uri/#sandmanuridecode_component) - URI-decodes a URI component
 
 
 ## Quick Start Example
