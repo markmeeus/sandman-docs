@@ -25,7 +25,7 @@ Make HTTP requests to external services:
 - [`delete()`](/sandman-docs/docs/api-http/#sandmanhttpdelete) - Makes an HTTP DELETE request
 - [`patch()`](/sandman-docs/docs/api-http/#sandmanhttppatch) - Makes an HTTP PATCH request
 - [`head()`](/sandman-docs/docs/api-http/#sandmanhttphead) - Makes an HTTP HEAD request
-- [`send()`](/sandman-docs/docs/api-http/#sandmanhttpsend) - Sends an HTTP request with custom configuration
+- [`request()`](/sandman-docs/docs/api-http/#sandmanhttprequest) - Sends an HTTP request with custom configuration
 
 ### [HTTP Server](/sandman-docs/docs/api-server/)
 Create HTTP server endpoints and handle requests:

@@ -18,7 +18,7 @@ Make HTTP requests to external services:
 - [`sandman.http.delete()`](#sandmanhttpdelete) - Makes an HTTP DELETE request
 - [`sandman.http.patch()`](#sandmanhttppatch) - Makes an HTTP PATCH request
 - [`sandman.http.head()`](#sandmanhttphead) - Makes an HTTP HEAD request
-- [`sandman.http.send()`](#sandmanhttpsend) - Sends an HTTP request with custom configuration
+- [`sandman.http.request()`](#sandmanhttprequest) - Sends an HTTP request with custom configuration
 
 
 ## sandman.http.get {#sandmanhttpget}
@@ -141,7 +141,7 @@ result = sandman.http.head()
 ```
 
 
-## sandman.http.send {#sandmanhttpsend}
+## sandman.http.request {#sandmanhttprequest}
 
 **Type:** Function  
 **Description:** Sends an HTTP request with custom configuration
@@ -149,14 +149,14 @@ result = sandman.http.head()
 ### Usage
 
 ```lua
-result = sandman.http.send(...)
+result = sandman.http.request(...)
 ```
 
 ### Examples
 
 ```lua
 -- Basic usage
--- Example usage of sandman.http.send
-result = sandman.http.send()
+-- Example usage of sandman.http.request
+result = sandman.http.request()
 ```
 
