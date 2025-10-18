@@ -6,6 +6,7 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
     {% seo %}
     {% feed_meta %}
