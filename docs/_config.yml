@@ -61,6 +61,8 @@ navigation:
     url: "/docs/"
   - title: "Blog"
     url: "/blog/"
+  - title: "GitHub"
+    url: "https://github.com/markmeeus/sandman"
 
 # Site data
 version: "0.1"
